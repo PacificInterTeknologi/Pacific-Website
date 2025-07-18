@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacific Inter Teknologi</title>
+  <link rel="icon" type="image/png" href="web.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+    .hero {
+      background-color: #f4f6f8;
+      color: #001f3f;
+      padding: 60px 30px;
+      text-align: center;
+      position: relative;
+    }
+    .hero img.logo {
+      max-width: 200px;
+      margin-bottom: 20px;
+      z-index: 1;
+      position: relative;
+    }
+    .hero h2 {
+      color: #001f3f;
+      font-size: 32px;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 18px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+      color: #333;
+    }
+    section {
+      padding: 40px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 26px;
+      font-weight: 700;
+      color: #001f3f;
+      margin-bottom: 15px;
+    }
+    p, li {
+      font-size: 17px;
+      font-weight: 600;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      z-index: 999;
+      font-size: 16px;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe5b;
+    }
+
+    .robot-animation {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      width: 60px;
+      opacity: 0.7;
+      animation: float 4s ease-in-out infinite;
+      z-index: 998;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="web.png" alt="Pacific Inter Teknologi Logo" class="logo">
+    <h2>Solusi IT Profesional</h2>
+    <p>Kami hadir memberikan solusi teknologi informasi terbaik untuk bisnis Anda di Indonesia.</p>
+  </div>
+
+  <section>
+    <h2>Tentang Kami</h2>
+    <p>Pacific Inter Teknologi adalah perusahaan IT di Indonesia yang fokus memberikan solusi teknologi berkualitas tinggi untuk memenuhi kebutuhan bisnis modern. Kami berkomitmen untuk menghadirkan layanan yang elegan, efisien, dan profesional.</p>
+  </section>
+
+  <section>
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Pengembangan Website & Aplikasi</li>
+      <li>IT Consulting & Maintenance</li>
+      <li>Jaringan & Keamanan Data</li>
+      <li>Integrasi Sistem & Cloud</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hubungi Kami</h2>
+    <p>Email: info@pacificinter.co.id<br>
+    WhatsApp: 0818-0828-3379</p>
+  </section>
+
+  <a class="whatsapp-button" href="https://wa.me/6281808283379" target="_blank">
+    💬 Hubungi via WhatsApp
+  </a>
+
+  <!-- Robot SVG animasi pojok kiri bawah -->
+  <svg class="robot-animation" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" fill="#003366"/>
+    <rect x="22" y="22" width="20" height="20" rx="4" ry="4" fill="white"/>
+    <circle cx="28" cy="32" r="2" fill="#003366"/>
+    <circle cx="36" cy="32" r="2" fill="#003366"/>
+    <rect x="28" y="38" width="8" height="2" rx="1" fill="#003366"/>
+    <line x1="32" y1="12" x2="32" y2="18" stroke="white" stroke-width="2"/>
+    <circle cx="32" cy="10" r="2" fill="white"/>
+  </svg>
+
+</body>
+</html>
