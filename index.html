@@ -1,145 +1,262 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pacific Inter Teknologi</title>
-  <link rel="icon" type="image/png" href="web.png">
   <style>
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #111;
-      font-weight: 500;
-      line-height: 1.6;
+      margin: 0;
+      background: linear-gradient(135deg, #0a0a23, #1b2735), url('https://images.unsplash.com/photo-1579547621706-1a9c79d5ffa6?ixlib=rb-4.0.0&auto=format&fit=crop&w=1950&q=80');
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: overlay;
+      color: #f4f4f4;
+      position: relative;
+      overflow-x: hidden;
     }
-    .hero {
-      background-color: #f4f6f8;
-      color: #001f3f;
-      padding: 60px 30px;
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: movePattern 60s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes movePattern {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    header, section, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0e1c2c, #1d3248);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
       position: relative;
     }
-    .hero img.logo {
-      max-width: 200px;
-      margin-bottom: 20px;
-      z-index: 1;
-      position: relative;
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
-    .hero h2 {
-      color: #001f3f;
-      font-size: 32px;
-      font-weight: 700;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 10px;
+    .logo img {
+      height: 180px;
+      filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.7)) brightness(1.1);
+      transform: translateX(60px);
+      transition: all 0.6s ease-in-out;
+      animation: fadeInFromLeft 2s ease-out;
     }
-    .hero p {
-      font-size: 18px;
-      font-weight: 600;
-      position: relative;
-      z-index: 1;
-      color: #333;
+    @keyframes fadeInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(60px);
+      }
     }
+    .logo img:hover {
+      transform: translateX(60px) scale(1.03);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #cc0000;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      animation: fadeInFromLeft 2s ease-out;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #cc0000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: fadeInFromLeft 2.2s ease-out;
+    }
+
     section {
-      padding: 40px 30px;
-      max-width: 1000px;
+      padding: 40px 20px;
+      max-width: 900px;
       margin: auto;
     }
     h2 {
-      font-size: 26px;
-      font-weight: 700;
-      color: #001f3f;
-      margin-bottom: 15px;
+      color: #f4b342;
+      margin-bottom: 10px;
     }
-    p, li {
-      font-size: 17px;
-      font-weight: 600;
+    .services ul,
+    .vision ul,
+    .mission ul,
+    .advantages ul {
+      list-style: none;
+      padding: 0;
     }
-    ul {
-      padding-left: 20px;
+    .services li,
+    .vision li,
+    .mission li,
+    .advantages li {
+      background: #ffffff10;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 5px solid #ffa94d;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInItem 1s ease forwards;
     }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
+    .advantages li:nth-child(1) { animation-delay: 0.2s; }
+    .advantages li:nth-child(2) { animation-delay: 0.4s; }
+    .advantages li:nth-child(3) { animation-delay: 0.6s; }
+    .advantages li:nth-child(4) { animation-delay: 0.8s; }
+
+    @keyframes fadeInItem {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .services li {
+      transition: all 0.3s ease;
+    }
+    .services li:hover {
+      background-color: #ffffff20;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .services li:active {
+      transform: scale(0.97);
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 16px;
+      font-size: 0.9em;
+      background-color: #cc0000;
       color: white;
-      padding: 15px 20px;
-      border-radius: 30px;
-      font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-      z-index: 999;
-      font-size: 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      animation: fadeInUp 2.4s ease-out;
     }
-    .whatsapp-button:hover {
-      background-color: #1ebe5b;
-    }
-
-    .robot-animation {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-      width: 60px;
-      opacity: 0.7;
-      animation: float 4s ease-in-out infinite;
-      z-index: 998;
+    .cta-button:hover {
+      background-color: #ff3333;
+      transform: translateY(-2px);
     }
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      background: #1f2c38;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact p {
+      margin: 3px 0;
+      font-size: 0.85em;
+    }
+    a {
+      color: #ffa94d;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="logo">
+      <img src="Logo web.png" alt="Logo P">
+    </div>
+    <h1>Pacific Inter Teknologi</h1>
+    <p>Teknologi Andal, Bisnis Tangguh</p>
+  </header>
 
-  <div class="hero">
-    <img src="web.png" alt="Pacific Inter Teknologi Logo" class="logo">
-    <h2>Solusi IT Profesional</h2>
-    <p>Kami hadir memberikan solusi teknologi informasi terbaik untuk bisnis Anda di Indonesia.</p>
-  </div>
-
-  <section>
+  <section class="profile">
     <h2>Tentang Kami</h2>
-    <p>Pacific Inter Teknologi adalah perusahaan IT di Indonesia yang fokus memberikan solusi teknologi berkualitas tinggi untuk memenuhi kebutuhan bisnis modern. Kami berkomitmen untuk menghadirkan layanan yang elegan, efisien, dan profesional.</p>
+    <p>Pacific Inter Teknologi adalah perusahaan penyedia solusi IT yang mengedepankan keandalan dan profesionalisme. Kami melayani pembuatan program, pengembangan website, instalasi jaringan, serta maintenance komputer untuk perusahaan besar.</p>
   </section>
 
-  <section>
-    <h2>Layanan Kami</h2>
+  <section class="vision">
+    <h2>Visi</h2>
     <ul>
-      <li>Pengembangan Website & Aplikasi</li>
-      <li>IT Consulting & Maintenance</li>
-      <li>Jaringan & Keamanan Data</li>
-      <li>Integrasi Sistem & Cloud</li>
+      <li>Menjadi penyedia solusi teknologi informasi terdepan dan terpercaya di Indonesia.</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Hubungi Kami</h2>
-    <p>Email: info@pacificinter.co.id<br>
-    WhatsApp: 0818-0828-3379</p>
+  <section class="mission">
+    <h2>Misi</h2>
+    <ul>
+      <li>Menyediakan layanan IT berkualitas tinggi yang berfokus pada kebutuhan klien.</li>
+      <li>Mengembangkan inovasi teknologi yang mendukung pertumbuhan bisnis.</li>
+      <li>Membangun hubungan jangka panjang dengan mitra melalui layanan profesional dan berintegritas.</li>
+      <li>Menjaga kepuasan pelanggan dengan dukungan teknis yang andal.</li>
+    </ul>
   </section>
 
-  <a class="whatsapp-button" href="https://wa.me/6281808283379" target="_blank">
-    💬 Hubungi via WhatsApp
-  </a>
+  <section class="advantages">
+    <h2>Keunggulan Kami</h2>
+    <ul>
+      <li>✔️ Tim profesional dan berpengalaman</li>
+      <li>✔️ Dukungan cepat dan responsif</li>
+      <li>✔️ Harga kompetitif dengan kualitas terbaik</li>
+      <li>✔️ Layanan end-to-end dari konsultasi hingga maintenance</li>
+    </ul>
+  </section>
 
-  <!-- Robot SVG animasi pojok kiri bawah -->
-  <svg class="robot-animation" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="30" fill="#003366"/>
-    <rect x="22" y="22" width="20" height="20" rx="4" ry="4" fill="white"/>
-    <circle cx="28" cy="32" r="2" fill="#003366"/>
-    <circle cx="36" cy="32" r="2" fill="#003366"/>
-    <rect x="28" y="38" width="8" height="2" rx="1" fill="#003366"/>
-    <line x1="32" y1="12" x2="32" y2="18" stroke="white" stroke-width="2"/>
-    <circle cx="32" cy="10" r="2" fill="white"/>
-  </svg>
+  <section class="services">
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Pembuatan Program dan Aplikasi</li>
+      <li>Pengembangan Website</li>
+      <li>Instalasi dan Konfigurasi Jaringan</li>
+      <li>Maintenance Komputer Perusahaan</li>
+    </ul>
+    <div style="text-align:center;">
+      <a class="cta-button" href="https://wa.me/6281808283379?text=Halo%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Pacific%20Inter%20Teknologi" target="_blank">Konsultasi Sekarang</a>
+    </div>
+  </section>
 
+  <section class="contact">
+    <h2>Kontak</h2>
+    <p><strong>Telepon:</strong> 081808283379</p>
+    <p><strong>Email:</strong> leealfian.22@gmail.com</p>
+    <p><strong>Website:</strong> <a href="https://pacificinterteknologi.github.io/Pacific-Website/" target="_blank">https://pacificinterteknologi.github.io/Pacific-Website/</a></p>
+    <p><strong>Alamat:</strong><br>
+    Kirana Two Office Tower Lt. 10 Unit A<br>
+    Jl. Boulevard Timur No.88 5, RT.5/RW.2,<br>
+    Klp. Gading Tim., Kec. Klp. Gading,<br>
+    Jakarta Utara, DKI Jakarta 14240</p>
+  </section>
+
+  <footer>
+    &copy;  Pacific Inter Teknologi
+  </footer>
 </body>
 </html>
