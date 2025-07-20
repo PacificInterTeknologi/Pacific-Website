@@ -3,260 +3,1156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pacific Inter Teknologi</title>
+  <title>PACIFIC INTER TEKNOLOGI</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #0a0a23, #1b2735), url('https://images.unsplash.com/photo-1579547621706-1a9c79d5ffa6?ixlib=rb-4.0.0&auto=format&fit=crop&w=1950&q=80');
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b), url('logo.png') no-repeat center center;
+      background-size: 500px;
       background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-blend-mode: overlay;
-      color: #f4f4f4;
-      position: relative;
-      overflow-x: hidden;
+      color: white;
+      line-height: 1.6;
     }
 
-    body::after {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+    }
+
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="Logo web.png" alt="Pacific Logo">
+      <div class="logo-text">
+        <h1>Pacific Inter Teknologi</h1>
+        <span>Teknologi Andal, Bisnis Tangguh</span>
+      </div>
+    </div>
+    <button class="edukasi-btn" onclick="toggleEdukasi()">Edukasi</button>
+  </header>
+
+  <div class="edukasi-panel" id="edukasiPanel">
+    <h3>Edukasi Teknologi</h3>
+    <p><strong>Pemeliharaan Komputer:</strong> Membersihkan hardware, update software, dan install antivirus secara berkala untuk menjaga performa.</p>
+    <p><strong>Jaringan:</strong> Gunakan topologi jaringan yang stabil, pastikan perangkat terhubung dengan baik, dan gunakan perangkat berkualitas.</p>
+    <p><strong>Website:</strong> Update konten secara berkala, pastikan SEO aktif, dan gunakan hosting terpercaya.</p>
+    <p><strong>Program:</strong> Pastikan program yang digunakan sesuai kebutuhan, bebas bug, dan ada backup data secara rutin.</p>
+  </div>
+
+  <section class="section">
+    <h2>Tentang Kami</h2>
+    <p>Pacific Inter Teknologi adalah perusahaan penyedia solusi IT yang mengedepankan keandalan dan profesionalisme. Kami melayani pembuatan program, pengembangan website, instalasi jaringan, serta maintenance komputer untuk perusahaan besar.</p>
+  </section>
+
+  <section class="section">
+    <h2>Visi</h2>
+    <div class="highlight-box">
+      <p>Menjadi penyedia solusi teknologi informasi terdepan dan terpercaya di Indonesia.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Misi</h2>
+    <ul>
+      <li>Menyediakan layanan TI yang handal dan berkualitas.</li>
+      <li>Mendukung pertumbuhan bisnis klien melalui solusi teknologi tepat guna.</li>
+      <li>Meningkatkan keamanan dan efisiensi operasional melalui inovasi.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Keunggulan Kami</h2>
+    <ul>
+      <li>Tim profesional dan berpengalaman</li>
+      <li>Layanan responsif dan personal</li>
+      <li>Dukungan penuh mulai dari konsultasi hingga implementasi</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Layanan Kami</h2>
+    <ul>
+      <li>Pembuatan Aplikasi & Program</li>
+      <li>Pembuatan dan Pengelolaan Website</li>
+      <li>Instalasi & Maintenance Jaringan</li>
+      <li>Perawatan Komputer & IT Support</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Kontak</h2>
+    <p>📞 085217006908<br>
+    ✉️ leealfian17@gmail.com<br>
+    🌐 <a href="https://pacificinterteknologi.github.io/Pacific-Website/" target="_blank" style="color: #90caf9;">Website Kami</a></p>
+  </section>
+
+  <div class="cta">
+    <a href="https://wa.me/6285217006908" target="_blank">Konsultasi Sekarang via WhatsApp</a>
+  </div>
+
+  <script>
+    function toggleEdukasi() {
+      const panel = document.getElementById('edukasiPanel');
+      panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACIFIC INTER TEKNOLOGI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b), url('logo.png') no-repeat center center;
+      background-size: 500px;
+      background-attachment: fixed;
+      color: white;
+      line-height: 1.6;
+    }
+
+    body::before {
       content: "";
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
-      animation: movePattern 60s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes movePattern {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 100px; }
-    }
-
-    header, section, footer {
-      position: relative;
-      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: url('logo web.png') no-repeat center center;
+      background-size: 500px;
+      opacity: 0.08;
+      z-index: -1;
+      filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.3));
+      transform: translateZ(0);
     }
 
     header {
-      background: linear-gradient(90deg, #0e1c2c, #1d3248);
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
     }
-    .logo {
-      position: absolute;
-      top: 10px;
-      left: 40px;
-      height: 100%;
+
+    .logo-container {
       display: flex;
       align-items: center;
-    }
-    .logo img {
-      height: 180px;
-      filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.7)) brightness(1.1);
-      transform: translateX(60px);
-      transition: all 0.6s ease-in-out;
-      animation: fadeInFromLeft 2s ease-out;
-    }
-    @keyframes fadeInFromLeft {
-      0% {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(60px);
-      }
-    }
-    .logo img:hover {
-      transform: translateX(60px) scale(1.03);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #cc0000;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-      animation: fadeInFromLeft 2s ease-out;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #cc0000;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      animation: fadeInFromLeft 2.2s ease-out;
+      gap: 15px;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
+    .logo-container img {
+      height: 50px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+    }
+
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
       margin: auto;
     }
-    h2 {
-      color: #f4b342;
-      margin-bottom: 10px;
-    }
-    .services ul,
-    .vision ul,
-    .mission ul,
-    .advantages ul {
-      list-style: none;
-      padding: 0;
-    }
-    .services li,
-    .vision li,
-    .mission li,
-    .advantages li {
-      background: #ffffff10;
-      margin-bottom: 10px;
-      padding: 15px;
-      border-left: 5px solid #ffa94d;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInItem 1s ease forwards;
-    }
-    .advantages li:nth-child(1) { animation-delay: 0.2s; }
-    .advantages li:nth-child(2) { animation-delay: 0.4s; }
-    .advantages li:nth-child(3) { animation-delay: 0.6s; }
-    .advantages li:nth-child(4) { animation-delay: 0.8s; }
 
-    @keyframes fadeInItem {
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- isi tidak berubah -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACIFIC INTER TEKNOLOGI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b), url('logo.png') no-repeat center center;
+      background-size: 500px;
+      background-attachment: fixed;
+      color: white;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('logo web.png') no-repeat center center;
+      background-size: 500px;
+      opacity: 0.08;
+      z-index: -1;
+      filter: drop-shadow(0 0 12px rgba(255, 0, 0, 0.3));
+      transform: translateZ(0);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container img {
+      height: 50px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+    }
+
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(30, 30, 45, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    .services li {
-      transition: all 0.3s ease;
-    }
-    .services li:hover {
-      background-color: #ffffff20;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .services li:active {
-      transform: scale(0.97);
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 16px;
-      font-size: 0.9em;
-      background-color: #cc0000;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      animation: fadeInUp 2.4s ease-out;
-    }
-    .cta-button:hover {
-      background-color: #ff3333;
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
       }
-      100% {
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- isi tidak berubah -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACIFIC INTER TEKNOLOGI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b);
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container img {
+      height: 50px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6), 0 0 5px rgba(255,255,255,0.1);
+    }
+
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(30, 30, 45, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    footer {
-      background: #1f2c38;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .contact p {
-      margin: 3px 0;
-      font-size: 0.85em;
-    }
-    a {
-      color: #ffa94d;
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="Logo web.png" alt="Logo P">
-    </div>
-    <h1>Pacific Inter Teknologi</h1>
-    <p>Teknologi Andal, Bisnis Tangguh</p>
-  </header>
+  <!-- isi tidak berubah -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACIFIC INTER TEKNOLOGI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b);
+      color: white;
+      line-height: 1.6;
+    }
 
-  <section class="profile">
-    <h2>Tentang Kami</h2>
-    <p>Pacific Inter Teknologi adalah perusahaan penyedia solusi IT yang mengedepankan keandalan dan profesionalisme. Kami melayani pembuatan program, pengembangan website, instalasi jaringan, serta maintenance komputer untuk perusahaan besar.</p>
-  </section>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
 
-  <section class="vision">
-    <h2>Visi</h2>
-    <ul>
-      <li>Menjadi penyedia solusi teknologi informasi terdepan dan terpercaya di Indonesia.</li>
-    </ul>
-  </section>
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-  <section class="mission">
-    <h2>Misi</h2>
-    <ul>
-      <li>Menyediakan layanan IT berkualitas tinggi yang berfokus pada kebutuhan klien.</li>
-      <li>Mengembangkan inovasi teknologi yang mendukung pertumbuhan bisnis.</li>
-      <li>Membangun hubungan jangka panjang dengan mitra melalui layanan profesional dan berintegritas.</li>
-      <li>Menjaga kepuasan pelanggan dengan dukungan teknis yang andal.</li>
-    </ul>
-  </section>
+    .logo-container img {
+      height: 50px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+    }
 
-  <section class="advantages">
-    <h2>Keunggulan Kami</h2>
-    <ul>
-      <li>✔️ Tim profesional dan berpengalaman</li>
-      <li>✔️ Dukungan cepat dan responsif</li>
-      <li>✔️ Harga kompetitif dengan kualitas terbaik</li>
-      <li>✔️ Layanan end-to-end dari konsultasi hingga maintenance</li>
-    </ul>
-  </section>
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-  <section class="services">
-    <h2>Layanan Kami</h2>
-    <ul>
-      <li>Pembuatan Program dan Aplikasi</li>
-      <li>Pengembangan Website</li>
-      <li>Instalasi dan Konfigurasi Jaringan</li>
-      <li>Maintenance Komputer Perusahaan</li>
-    </ul>
-    <div style="text-align:center;">
-      <a class="cta-button" href="https://wa.me/6281808283379?text=Halo%20saya%20ingin%20konsultasi%20mengenai%20layanan%20Pacific%20Inter%20Teknologi" target="_blank">Konsultasi Sekarang</a>
-    </div>
-  </section>
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
 
-  <section class="contact">
-    <h2>Kontak</h2>
-    <p><strong>Telepon:</strong> 081808283379</p>
-    <p><strong>Email:</strong> leealfian.22@gmail.com</p>
-    <p><strong>Website:</strong> <a href="https://pacificinterteknologi.github.io/Pacific-Website/" target="_blank">https://pacificinterteknologi.github.io/Pacific-Website/</a></p>
-    <p><strong>Alamat:</strong><br>
-    Kirana Two Office Tower Lt. 10 Unit A<br>
-    Jl. Boulevard Timur No.88 5, RT.5/RW.2,<br>
-    Klp. Gading Tim., Kec. Klp. Gading,<br>
-    Jakarta Utara, DKI Jakarta 14240</p>
-  </section>
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6), 0 0 5px rgba(255,255,255,0.1);
+    }
 
-  <footer>
-    &copy;  Pacific Inter Teknologi
-  </footer>
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(30, 30, 45, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- isi tidak berubah -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PACIFIC INTER TEKNOLOGI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #0a0f1a, #1b1f2b);
+      color: white;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('logo web.png') no-repeat center center;
+      background-size: 500px;
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container img {
+      height: 50px;
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5));
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text h1 {
+      margin: 0;
+      font-size: 18px;
+      color: red;
+      text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.8);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .logo-text span {
+      font-size: 13px;
+      color: #e57373;
+      text-shadow: 1px 1px 2px rgba(255,0,0,0.6), 0 0 5px rgba(255,0,0,0.4);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .edukasi-btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .edukasi-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .edukasi-panel {
+      display: none;
+      position: fixed;
+      top: 80px;
+      right: 30px;
+      width: 320px;
+      background-color: #2a2a3d;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      padding: 20px;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .edukasi-panel h3 {
+      margin-top: 0;
+      color: #ff5252;
+      font-size: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    .edukasi-panel p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(30, 30, 45, 0.8);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .section h2 {
+      color: #ffc107;
+      margin-top: 0;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .highlight-box {
+      background-color: #2a2a3d;
+      padding: 20px;
+      border-left: 5px solid #ffa000;
+      margin-top: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .cta {
+      text-align: center;
+      margin: 40px auto;
+    }
+
+    .cta a {
+      background-color: #388e3c;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta a:hover {
+      background-color: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .logo-container {
+        flex-direction: row;
+        align-items: center;
+      }
+      .logo-text h1 {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- isi tidak berubah -->
 </body>
 </html>
