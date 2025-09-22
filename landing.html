@@ -118,6 +118,23 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      overflow-y: auto; /* Tambahkan scroll untuk konten yang panjang */
+      padding-right: 10px; /* Ruang untuk scrollbar */
+      max-height: calc(var(--slider-height) - var(--slider-padding) * 2); /* Batasi tinggi maksimum */
+    }
+    
+    .left::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .left::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 3px;
+    }
+    
+    .left::-webkit-scrollbar-thumb {
+      background: rgba(212, 175, 55, 0.3);
+      border-radius: 3px;
     }
     
     .title {
@@ -158,6 +175,7 @@
       backdrop-filter: blur(5px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
+      white-space: nowrap; /* Mencegah teks terpotong */
     }
     
     .pill:hover {
@@ -185,6 +203,8 @@
       color: var(--text-secondary);
       border: 1px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      white-space: nowrap; /* Mencegah teks terpotong */
+      padding: 0 8px; /* Tambahkan padding horizontal */
     }
     
     .sponsor:hover {
@@ -248,6 +268,9 @@
       margin-bottom: 12px;
       color: var(--text-accent);
       text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+      white-space: normal; /* Izinkan teks untuk wrap */
+      word-break: break-word; /* Break kata yang panjang */
+      padding: 0 10px; /* Tambahkan padding horizontal */
     }
     
     .poster .small {
@@ -255,6 +278,9 @@
       opacity: 0.9;
       color: var(--text-secondary);
       letter-spacing: 0.5px;
+      white-space: normal; /* Izinkan teks untuk wrap */
+      word-break: break-word; /* Break kata yang panjang */
+      padding: 0 10px; /* Tambahkan padding horizontal */
     }
     
     /* Controls */
@@ -310,6 +336,7 @@
       font-weight: 500;
       transition: all 0.3s ease;
       backdrop-filter: blur(5px);
+      white-space: nowrap; /* Mencegah teks terpotong */
     }
     
     .nav button:hover {
@@ -388,6 +415,7 @@
       position: relative;
       border: 1px solid rgba(212, 175, 55, 0.3);
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      flex-shrink: 0; /* Mencegah avatar mengecil */
     }
     
     .avatar img {
@@ -406,6 +434,8 @@
       color: var(--text-secondary);
       position: relative;
       padding: 0 20px;
+      word-wrap: break-word; /* Mencegah teks terpotong */
+      overflow-wrap: break-word; /* Mencegah teks terpotong */
     }
     
     .quote::before, .quote::after {
@@ -473,6 +503,7 @@
       font-weight: 600;
       font-size: clamp(14px, 1.8vw, 16px);
       transition: all 0.3s ease;
+      white-space: nowrap; /* Mencegah teks terpotong */
     }
     
     .rsvp-form button.primary {
@@ -520,6 +551,8 @@
       padding-left: 24px;
       position: relative;
       font-size: clamp(14px, 1.8vw, 16px);
+      word-wrap: break-word; /* Mencegah teks terpotong */
+      overflow-wrap: break-word; /* Mencegah teks terpotong */
     }
     
     .guest-list li:before {
@@ -561,6 +594,8 @@
       font-weight: 600;
       backdrop-filter: blur(10px);
       font-size: clamp(14px, 1.8vw, 16px);
+      white-space: normal; /* Izinkan teks untuk wrap */
+      max-width: 80%; /* Batasi lebar maksimum */
     }
     
     .success-message.show {
@@ -583,19 +618,22 @@
       font-weight: 600;
       backdrop-filter: blur(10px);
       font-size: clamp(14px, 1.8vw, 16px);
+      white-space: normal; /* Izinkan teks untuk wrap */
+      max-width: 80%; /* Batasi lebar maksimum */
     }
     
     .error-message.show {
       transform: translateX(0);
     }
     
-    /* Professional Sponsor Section - PERBAIKAN */
+    /* Professional Sponsor Section */
     .sponsor-section {
-      margin-top: 20px; /* Dikurangi dari 30px */
+      margin-top: 20px;
+      width: 100%;
     }
     
     .sponsor-section .subtitle {
-      margin-bottom: 20px; /* Dikurangi dari 30px */
+      margin-bottom: 20px;
       font-weight: 400;
       font-size: clamp(15px, 1.8vw, 17px);
       color: var(--text-secondary);
@@ -604,26 +642,28 @@
     
     .sponsor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dikurangi dari 250px */
-      gap: 15px; /* Dikurangi dari 25px */
-      margin-top: 15px; /* Dikurangi dari 20px */
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+      width: 100%;
     }
     
     .sponsor-card {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(212, 175, 55, 0.05));
-      border-radius: 12px; /* Dikurangi dari 16px */
-      padding: 20px 15px; /* Dikurangi dari 30px 25px */
+      border-radius: 12px;
+      padding: 20px 15px;
       text-align: center;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       border: 1px solid rgba(212, 175, 55, 0.2);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Dikurangi dari 0 10px 30px */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 140px; /* Dikurangi dari 160px */
+      min-height: 140px;
       position: relative;
       overflow: hidden;
+      width: 100%;
     }
     
     .sponsor-card::before {
@@ -632,16 +672,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 3px; /* Dikurangi dari 4px */
+      height: 3px;
       background: linear-gradient(90deg, var(--gold), transparent);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
     
     .sponsor-card:hover {
-      transform: translateY(-5px); /* Dikurangi dari -8px */
+      transform: translateY(-5px);
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(212, 175, 55, 0.08));
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Dikurangi dari 0 15px 40px */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       border-color: rgba(212, 175, 55, 0.4);
     }
     
@@ -650,32 +690,38 @@
     }
     
     .sponsor-icon {
-      font-size: clamp(28px, 3.5vw, 35px); /* Dikurangi dari 32px, 4vw, 40px */
+      font-size: clamp(28px, 3.5vw, 35px);
       color: var(--gold);
-      margin-bottom: 10px; /* Dikurangi dari 15px */
+      margin-bottom: 10px;
       transition: all 0.3s ease;
     }
     
     .sponsor-card:hover .sponsor-icon {
       transform: scale(1.1);
-      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Dikurangi dari 15px */
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
     }
     
     .sponsor-name {
-      font-size: clamp(16px, 2vw, 20px); /* Dikurangi dari 18px, 2.2vw, 22px */
+      font-size: clamp(16px, 2vw, 20px);
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 6px; /* Dikurangi dari 8px */
+      margin-bottom: 6px;
       font-family: 'Playfair Display', serif;
-      letter-spacing: 0.3px; /* Dikurangi dari 0.5px */
+      letter-spacing: 0.3px;
+      white-space: normal; /* Izinkan teks untuk wrap */
+      word-break: break-word; /* Break kata yang panjang */
+      padding: 0 5px; /* Tambahkan padding horizontal */
+      width: 100%;
     }
     
     .sponsor-description {
-      font-size: clamp(12px, 1.5vw, 14px); /* Dikurangi dari 13px, 1.6vw, 15px */
+      font-size: clamp(12px, 1.5vw, 14px);
       color: var(--text-secondary);
-      line-height: 1.4; /* Dikurangi dari 1.5 */
+      line-height: 1.4;
       max-width: 90%;
       margin: 0 auto;
+      white-space: normal; /* Izinkan teks untuk wrap */
+      word-break: break-word; /* Break kata yang panjang */
     }
     
     /* Responsive Styles */
@@ -695,6 +741,10 @@
         --poster-padding: 24px;
         --avatar-size: 220px;
       }
+      
+      .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
     }
     
     @media (max-width: 1199px) and (min-width: 993px) {
@@ -712,6 +762,10 @@
         --poster-width: 380px;
         --poster-padding: 20px;
         --avatar-size: 200px;
+      }
+      
+      .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       }
     }
     
@@ -732,19 +786,18 @@
         --avatar-size: 180px;
       }
       
-      /* PERBAIKAN: Responsif Sponsor Section */
       .sponsor-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Dikurangi dari 200px */
-        gap: 15px; /* Tetap sama */
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
       }
       
       .sponsor-card {
-        min-height: 120px; /* Dikurangi dari 140px */
-        padding: 15px 12px; /* Dikurangi dari 20px 15px */
+        min-height: 120px;
+        padding: 15px 12px;
       }
       
       .sponsor-icon {
-        font-size: clamp(24px, 3vw, 30px); /* Dikurangi dari 28px, 3.5vw, 35px */
+        font-size: clamp(24px, 3vw, 30px);
       }
     }
     
@@ -791,19 +844,18 @@
         justify-content: flex-end;
       }
       
-      /* PERBAIKAN: Responsif Sponsor Section */
       .sponsor-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Dikurangi dari 1fr */
-        gap: 12px; /* Dikurangi dari 15px */
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 12px;
       }
       
       .sponsor-card {
-        min-height: 110px; /* Dikurangi dari 120px */
-        padding: 12px 10px; /* Dikurangi dari 15px */
+        min-height: 110px;
+        padding: 12px 10px;
       }
       
       .sponsor-icon {
-        font-size: clamp(22px, 2.8vw, 28px); /* Dikurangi dari 24px, 3vw, 30px */
+        font-size: clamp(22px, 2.8vw, 28px);
       }
     }
     
@@ -849,19 +901,18 @@
         order: 2;
       }
       
-      /* PERBAIKAN: Responsif Sponsor Section */
       .sponsor-grid {
         grid-template-columns: 1fr;
-        gap: 10px; /* Dikurangi dari 15px */
+        gap: 10px;
       }
       
       .sponsor-card {
-        min-height: 100px; /* Dikurangi dari 120px */
-        padding: 10px; /* Dikurangi dari 12px */
+        min-height: 100px;
+        padding: 10px;
       }
       
       .sponsor-icon {
-        font-size: clamp(20px, 2.5vw, 24px); /* Dikurangi dari 22px, 2.8vw, 28px */
+        font-size: clamp(20px, 2.5vw, 24px);
       }
     }
     
@@ -897,14 +948,18 @@
         padding: 5px 8px;
       }
       
-      /* PERBAIKAN: Responsif Sponsor Section */
+      .sponsor-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      
       .sponsor-card {
-        min-height: 90px; /* Dikurangi dari 100px */
-        padding: 8px; /* Dikurangi dari 10px */
+        min-height: 90px;
+        padding: 8px;
       }
       
       .sponsor-icon {
-        font-size: clamp(18px, 2.2vw, 20px); /* Dikurangi dari 20px, 2.5vw, 24px */
+        font-size: clamp(18px, 2.2vw, 20px);
       }
     }
     
@@ -1007,8 +1062,8 @@
           </div>
           <div class="right">
             <div class="poster">
-              <div class="big">Tamu & Networking</div>
-              <div class="small">Kesempatan berjejaring dengan para pemimpin industri</div>
+              <div class="big">Tamu Terhormat</div>
+              <div class="small">Platform untuk memperluas jaringan profesional dengan para pemimpin industri</div>
             </div>
           </div>
         </section>
@@ -1017,7 +1072,7 @@
         <section class="slide">
           <div class="left">
             <h2 class="title">Perkenalan Pembicara</h2>
-            <p class="subtitle">Foto & kata-kata pembicara utama</p>
+            <p class="subtitle">Kata-kata pembicara utama:</p>
             <div class="person" style="margin-top:20px">
               <div class="avatar" id="userPhoto">
                 <!-- Ganti dengan tag img jika ada foto -->
@@ -1029,7 +1084,7 @@
           <div class="right">
             <div class="poster">
               <div class="big">Pembicara Utama</div>
-              <div class="small">ALFIANTO — IT </div>
+              <div class="small">ALFIANTO — OWNER</div>
             </div>
           </div>
         </section>
