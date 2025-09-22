@@ -660,7 +660,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 140px;
+      min-height: 180px;
       position: relative;
       overflow: hidden;
       width: 100%;
@@ -689,8 +689,58 @@
       opacity: 1;
     }
     
+    .sponsor-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .sponsor-card:hover::after {
+      opacity: 1;
+    }
+    
+    .sponsor-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 10px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .sponsor-logo:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+    
+    .sponsor-logo img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      /* Perbaikan: Hapus filter yang menyebabkan gambar tidak terlihat */
+      /* filter: brightness(0) invert(1); */
+      transition: all 0.3s ease;
+    }
+    
+    .sponsor-card:hover .sponsor-logo img {
+      /* Perbaikan: Hapus filter yang menyebabkan gambar tidak terlihat */
+      /* filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); */
+    }
+    
     .sponsor-icon {
-      font-size: clamp(28px, 3.5vw, 35px);
+      font-size: clamp(24px, 3vw, 30px);
       color: var(--gold);
       margin-bottom: 10px;
       transition: all 0.3s ease;
@@ -792,12 +842,17 @@
       }
       
       .sponsor-card {
-        min-height: 120px;
+        min-height: 160px;
         padding: 15px 12px;
       }
       
       .sponsor-icon {
         font-size: clamp(24px, 3vw, 30px);
+      }
+      
+      .sponsor-logo {
+        width: 70px;
+        height: 70px;
       }
     }
     
@@ -850,12 +905,17 @@
       }
       
       .sponsor-card {
-        min-height: 110px;
+        min-height: 150px;
         padding: 12px 10px;
       }
       
       .sponsor-icon {
         font-size: clamp(22px, 2.8vw, 28px);
+      }
+      
+      .sponsor-logo {
+        width: 60px;
+        height: 60px;
       }
     }
     
@@ -907,12 +967,17 @@
       }
       
       .sponsor-card {
-        min-height: 100px;
+        min-height: 140px;
         padding: 10px;
       }
       
       .sponsor-icon {
         font-size: clamp(20px, 2.5vw, 24px);
+      }
+      
+      .sponsor-logo {
+        width: 60px;
+        height: 60px;
       }
     }
     
@@ -954,12 +1019,17 @@
       }
       
       .sponsor-card {
-        min-height: 90px;
+        min-height: 130px;
         padding: 8px;
       }
       
       .sponsor-icon {
         font-size: clamp(18px, 2.2vw, 20px);
+      }
+      
+      .sponsor-logo {
+        width: 50px;
+        height: 50px;
       }
     }
     
@@ -1018,6 +1088,9 @@
               <p class="subtitle">Kami bangga didukung oleh mitra terkemuka dalam menyelenggarakan acara ini</p>
               <div class="sponsor-grid">
                 <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src="metro.png" alt="Logo Metrodata" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGFmMzciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMlY2TTQgN2gxNk00IDE3aDE2TTQgMTJoMTZNMiAyMmgyMCIvPjwvc3ZnPg==';">
+                  </div>
                   <div class="sponsor-icon">
                     <i class="fas fa-microchip"></i>
                   </div>
@@ -1025,6 +1098,9 @@
                   <div class="sponsor-description">Solusi Teknologi Terintegrasi</div>
                 </div>
                 <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src="erasoft.png" alt="Logo Erasoft" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGFmMzciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTYgMThoNE00IDZoNE0xMiA2djEyTTQgMTJoMTZNMTIgMmwxMCAxME0yIDEybDEwIDEwIi8+PC9zdmc+';">
+                  </div>
                   <div class="sponsor-icon">
                     <i class="fas fa-laptop-code"></i>
                   </div>
@@ -1032,6 +1108,9 @@
                   <div class="sponsor-description">Inovasi Software Terdepan</div>
                 </div>
                 <div class="sponsor-card">
+                  <div class="sponsor-logo">
+                    <img src="lenovo.png" alt="Logo Lenovo Indonesia" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNkNGFmMzciIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cmVjdCB4PSIyIiB5PSI3IiB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHJ4PSIyIiByeT0iMiIvPjxwYXRoIGQ9Ik0xNiAyVjdhMiAyIDAgMCAwLTItMkg2YTIgMiAwIDAgMC0yIDJ2MTBhMiAyIDAgMCAwIDIgMmg4YTIgMiAwIDAgMCAyLTJWNyIvPjwvc3ZnPg==';">
+                  </div>
                   <div class="sponsor-icon">
                     <i class="fas fa-laptop"></i>
                   </div>
@@ -1076,7 +1155,7 @@
             <div class="person" style="margin-top:20px">
               <div class="avatar" id="userPhoto">
                 <!-- Ganti dengan tag img jika ada foto -->
-                <img src="alfian.PNG" alt="Foto Pembicara">
+                <img src="alfian.PNG" alt="Foto Pembicara" onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iMjIwIiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q0YWYzNyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Ik0yMCAyMXYtMmE0IDQgMCAwIDAtNC00SDhhNCA0IDAgMCAwLTQgNHYyIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI3IiByPSI0Ii8+PC9zdmc+';">
               </div>
               <blockquote class="quote" id="userQuote">"Selamat datang di Grand Opening PACIFIC PRO — bersama, kita permudah urusan keuangan perusahaan Anda."</blockquote>
             </div>
