@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Login Form</title>
+  <style>
+    /* === Reset & Base === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === Container === */
+    .login-container {
+      background: #fff;
+      width: 400px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* === Animated Character === */
+    .character {
+      position: absolute;
+      left: -100px;
+      bottom: 0;
+      width: 150px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* === Header === */
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1d4ed8;
+    }
+
+    /* === Input fields === */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 5px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #1d4ed8;
+      box-shadow: 0 0 5px rgba(29, 78, 216, 0.4);
+    }
+
+    /* === Button === */
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+    }
+
+    /* === Footer text === */
+    .footer-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/businessman-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--man-person-avatar-user-professional-pack-people-illustrations-6055444.png" 
+         alt="character" class="character">
+
+    <h2>Register Now</h2>
+    <p style="text-align:center; font-size:13px; color:#555; margin-bottom:15px;">
+      Secure your spot in our upcoming live webinar
+    </p>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label>What's your name?</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Enter your email address</label>
+        <input type="email" placeholder="example@email.com" required>
+      </div>
+
+      <button type="submit" class="btn">Next</button>
+    </form>
+
+    <p class="footer-text">Powered by Pacific Inter Teknologi</p>
+  </div>
+
+  <script>
+    // Simple animation when submitting
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you for registering! 🎉');
+    });
+  </script>
+
+</body>
+</html>
